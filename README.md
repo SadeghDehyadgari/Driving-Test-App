@@ -1,41 +1,49 @@
-# Driving Theory Test Practice App - Refactored
+# 🚗 Driving Theory Test Practice App
 
-## Changes Made
+A modern, responsive React application for practicing driving theory test questions with a timed quiz format. Features text, image, and video-based questions to help users prepare for their driving theory exam.
 
-### 1. **Separated Inline Styles into CSS Files**
+## 🌟 Features
 
-- All inline styles have been moved to dedicated CSS files
-- Created a `/styles` folder for component-specific styles
-- UI components (Button, Card) have their own CSS files in `/components/ui`
-- Better maintainability and reusability
+- ✅ **20 Timed Questions** - Complete quiz in 20 minutes
+- ✅ **Multiple Question Types** - Text, image, and video-based questions
+- ✅ **Real-time Timer** - Countdown timer with auto-submit on timeout
+- ✅ **Progress Tracking** - Visual progress bar showing completion status
+- ✅ **Instant Feedback** - See correct/incorrect answers after submission
+- ✅ **Detailed Explanations** - Learn from each question with explanations
+- ✅ **Pass/Fail Results** - 70% passing threshold (14/20 correct)
+- ✅ **Fully Responsive** - Works seamlessly on desktop, tablet, and mobile
+- ✅ **Clean Architecture** - Separated concerns with CSS modules
 
-### 2. **Reduced Questions to 20**
+## 🎯 Demo
 
-- Reduced from 50 to 20 questions
-- Timer adjusted to 20 minutes (20 \* 60 seconds)
-- Pass threshold updated to 70% (14+ correct answers)
+## 🚀 Getting Started
 
-### 3. **Removed "in this video/photo" Phrases**
+### Prerequisites
 
-- Cleaned up question text for better clarity
-- Questions now directly ask what needs to be done
+- Node.js (v14 or higher)
+- npm or yarn
 
-### 4. **Working Timer**
+### Installation
 
-- Implemented useEffect hooks in App.jsx to:
-  - Decrement timer every second using TICK action
-  - Auto-submit quiz when timer reaches 0
-- Timer is properly displayed and updates in real-time
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/driving-theory-test-app.git
+cd driving-theory-test-app
+```
 
-### 5. **Fully Responsive Design**
+2. Install dependencies
+```bash
+npm install
+```
 
-- Mobile-first approach with breakpoints at 768px and 968px
-- Stack layout on mobile (media displays below questions)
-- Side-by-side layout on desktop
-- Responsive typography and spacing
-- Touch-friendly button sizes on mobile
+3. Start the development server
+```bash
+npm run dev
+```
 
-## Project Structure
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📁 Project Structure
 
 ```
 src/
@@ -88,32 +96,108 @@ src/
     └── ExplanationText.css
 ```
 
-## Key Features
+## 🎮 How to Use
 
-- ✅ 20-minute countdown timer
-- ✅ Auto-submit when time expires
-- ✅ Progress bar showing quiz completion
-- ✅ Text, image, and video questions
-- ✅ Answer selection with visual feedback
-- ✅ Navigation between questions
-- ✅ Detailed results with explanations
-- ✅ Pass/fail threshold (70%)
-- ✅ Fully responsive design
+1. **Start the Quiz** - The app loads with Question 1 and starts the 20-minute timer
+2. **Answer Questions** - Select your answer from the multiple choice options
+3. **Navigate** - Use Previous/Next buttons to move between questions
+4. **Submit** - Click the Submit button (✓) on the last question or wait for timer to expire
+5. **Review Results** - See your score and review all questions with correct answers and explanations
 
-## Responsive Breakpoints
+## 🎨 Responsive Design
 
-- **Desktop**: > 968px (side-by-side layout)
-- **Tablet**: 768px - 968px (stacked layout)
-- **Mobile**: < 768px (stacked, smaller text)
+The app is fully responsive with breakpoints at:
 
-## Installation
+- **Desktop**: > 968px (side-by-side layout for questions and media)
+- **Tablet**: 768px - 968px (stacked layout with optimized spacing)
+- **Mobile**: < 768px (compact layout with touch-friendly buttons)
 
-```bash
-npm install
-npm run dev
+## 🛠️ Technologies Used
+
+- **React** - UI library
+- **React Hooks** - State management (useReducer, useEffect)
+- **Lucide React** - Icon library
+- **CSS3** - Styling with responsive design
+- **Vite** - Build tool and dev server
+
+## 📝 Key Concepts
+
+### State Management
+Uses `useReducer` for predictable state updates:
+- Answer selection
+- Navigation between questions
+- Timer countdown
+- Quiz submission
+
+### Timer Implementation
+- 20-minute countdown timer (1200 seconds)
+- Updates every second using `setInterval`
+- Auto-submits quiz when time expires
+- Cleans up interval on unmount
+
+### Component Architecture
+- Separation of concerns with dedicated components
+- Reusable UI components (Button, Card)
+- CSS modules for scoped styling
+- Props drilling for data flow
+
+## 🔧 Customization
+
+### Adding More Questions
+Edit `src/data/questions.js`:
+
+```javascript
+{
+  id: 21,
+  type: "text", // "text", "image", or "video"
+  question: "Your question here?",
+  image: "/path/to/image.jpg", // for type: "image"
+  video: "/path/to/video.mp4", // for type: "video"
+  options: ["Option 1", "Option 2", "Option 3", "Option 4"],
+  correctAnswer: 0, // index of correct option (0-3)
+  explanation: "Explanation of the correct answer."
+}
 ```
 
-## Dependencies
+### Changing Timer Duration
+Edit `src/App.jsx`:
 
-- React
-- lucide-react (for icons)
+```javascript
+const initialState = {
+  currentQuestion: 0,
+  answers: Array(questions.length).fill(null),
+  submitted: false,
+  timeLeft: 30 * 60, // Change to 30 minutes (in seconds)
+};
+```
+
+### Adjusting Pass Threshold
+Edit `src/components/ScoreSummary.jsx`:
+
+```javascript
+const isPass = score > total * 0.8; // Change to 80% passing threshold
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is for educational purposes and is based on one of the modules from the "Complete React 19 Developer Course" on Udemy.
+
+## 🙏 Acknowledgments
+
+- Questions inspired by UK driving theory test format
+- Icons provided by [Lucide React](https://lucide.dev/)
+- Built with [Vite](https://vitejs.dev/)
+
+---
+
+⭐ If you find this project helpful, please consider giving it a star on GitHub!
