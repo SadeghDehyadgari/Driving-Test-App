@@ -1,0 +1,12 @@
+.navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navigation-controls {
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,12 @@
+.explanation-text {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .explanation-text {
+    font-size: 0.9rem;
+  }
+}

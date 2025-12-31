@@ -1,0 +1,8 @@
+.answer-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.answer-option {
+  margin-bottom: 0.5rem;
+}

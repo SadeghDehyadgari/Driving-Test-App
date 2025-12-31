@@ -1,0 +1,14 @@
+.result-content {
+  display: flex;
+  gap: 1rem;
+}
+
+.result-section {
+  flex: 1;
+}
+
+@media (max-width: 968px) {
+  .result-content {
+    flex-direction: column;
+  }
+}

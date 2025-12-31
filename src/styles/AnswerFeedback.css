@@ -1,0 +1,27 @@
+.answer-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feedback-option {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  white-space: pre-wrap;
+}
+
+.feedback-option.correct {
+  background-color: #d4edda;
+  border-color: #28a745;
+}
+
+.feedback-option.wrong {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+.feedback-option.user-selected {
+  border: 2px solid #007bff;
+}

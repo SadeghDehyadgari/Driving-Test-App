@@ -1,0 +1,26 @@
+.score-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.score-title.pass {
+  color: #28a745;
+}
+
+.score-title.fail {
+  color: #dc3545;
+}
+
+.score-text {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .score-title {
+    font-size: 1.3rem;
+  }
+
+  .score-text {
+    font-size: 1rem;
+  }
+}

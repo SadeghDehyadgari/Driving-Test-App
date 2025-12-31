@@ -1,0 +1,21 @@
+.media-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-image,
+.media-video {
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 968px) {
+  .media-display {
+    max-width: 100%;
+  }
+}

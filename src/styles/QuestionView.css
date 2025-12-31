@@ -1,0 +1,14 @@
+.question-content {
+  display: flex;
+  gap: 1rem;
+}
+
+.question-section {
+  flex: 1;
+}
+
+@media (max-width: 968px) {
+  .question-content {
+    flex-direction: column;
+  }
+}
