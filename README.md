@@ -6,7 +6,7 @@ A modern, responsive React application for practicing driving theory test questi
 
 ## 🌟 Features
 
-- ✅ **20 Timed Questions** - Complete quiz in 20 minutes
+- ✅ **20 Timed Questions** - Complete quiz in 10 minutes
 - ✅ **Multiple Question Types** - Text, image, and video-based questions
 - ✅ **Real-time Timer** - Countdown timer with auto-submit on timeout
 - ✅ **Progress Tracking** - Visual progress bar showing completion status
